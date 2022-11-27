@@ -1,0 +1,44 @@
+﻿@page "/Calculator"
+
+<h3>Calculator</h3>
+
+
+<label>input1</label>
+<input type="text"  @bind="ip1" />
+<label>input2</label>
+<input type="text" @bind="ip2" />
+<br />
+<button class="btn Add" @onclick="(e)=>add(e)">Add</button>
+<button class="btn Subtract" @onclick="(e)=>sub(e)">Subtract</button>
+<button class="btn Multiply" @onclick="(e)=>mul(e)">Multiply</button>
+<button class="btn Divide" @onclick="(e)=>div(e)">Divide</button>
+<br />
+<p>@result</p>
+
+
+@code {
+    private int result { get; set; }
+    private int ip1;
+    private int ip2;
+
+    public void add(MouseEventArgs e)
+    {
+        result = ip1 + ip2;
+    }
+
+    public void sub(MouseEventArgs e)
+    {
+        result = ip1 - ip2;
+    }
+
+    public void mul(MouseEventArgs e)
+    {
+        result = ip1 * ip2;
+    }
+
+    public void div(MouseEventArgs e)
+    {
+        result = ip1 / ip2;
+    }
+}
+
